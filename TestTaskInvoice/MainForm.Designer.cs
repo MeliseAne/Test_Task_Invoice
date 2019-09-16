@@ -1,6 +1,6 @@
 ﻿namespace TestTaskInvoice
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainDGV = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TotAmoBT = new System.Windows.Forms.Button();
@@ -46,9 +46,12 @@
             // 
             // MainDGV
             // 
+            this.MainDGV.AllowUserToAddRows = false;
+            this.MainDGV.AllowUserToDeleteRows = false;
             this.MainDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainDGV.Location = new System.Drawing.Point(12, 12);
             this.MainDGV.Name = "MainDGV";
+            this.MainDGV.ReadOnly = true;
             this.MainDGV.Size = new System.Drawing.Size(592, 435);
             this.MainDGV.TabIndex = 0;
             // 
@@ -75,6 +78,7 @@
             this.TotAmoBT.TabIndex = 5;
             this.TotAmoBT.Text = "Total amount";
             this.TotAmoBT.UseVisualStyleBackColor = true;
+            this.TotAmoBT.Click += new System.EventHandler(this.TotAmoBT_Click);
             // 
             // DeleteBT
             // 
@@ -84,6 +88,7 @@
             this.DeleteBT.TabIndex = 4;
             this.DeleteBT.Text = "Delete";
             this.DeleteBT.UseVisualStyleBackColor = true;
+            this.DeleteBT.Click += new System.EventHandler(this.DeleteBT_Click);
             // 
             // ChangeBT
             // 
@@ -93,7 +98,7 @@
             this.ChangeBT.TabIndex = 3;
             this.ChangeBT.Text = "Change";
             this.ChangeBT.UseVisualStyleBackColor = true;
-            this.ChangeBT.Click += new System.EventHandler(this.Button4_Click);
+            this.ChangeBT.Click += new System.EventHandler(this.ChangeBT_click);
             // 
             // AddBT
             // 
@@ -141,7 +146,6 @@
             this.label1.Size = new System.Drawing.Size(94, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Connection String:";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // ConnBT
             // 
@@ -153,7 +157,7 @@
             this.ConnBT.UseVisualStyleBackColor = true;
             this.ConnBT.Click += new System.EventHandler(this.ConnBT_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -163,9 +167,8 @@
             this.Controls.Add(this.ConnTB);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.MainDGV);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MainDGV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
